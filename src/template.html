@@ -6,10 +6,23 @@
     <title>ToDo</title>
   </head>
   <body>
-    <div class="sidebar"><button class="add">+</button></div>
-    <div class="main"><button></button></div>
-    <dialog class="adddialog">
-      Title: <input type="text" />Description: <input type="text" />
+    <div class="sidebar">
+      <button class="add">+</button>
+      <button>All</button>
+      <button>Completed</button>
+    </div>
+    <div class="main"></div>
+    <dialog class="adddialog" open="">
+      Title: <input type="text" />Description:
+      <textarea name="disc" id="disc"></textarea>
+      Due Date:
+      <input type="date" /> <label for="priority">Priority: </label>
+      <select name="priority" id="priority">
+        <option value="low">Low</option>
+        <option value="medium">Medium</option>
+        <option value="high">High</option>
+      </select>
+      <div><button>Add</button><button>Cancel</button></div>
     </dialog>
     <dialog></dialog>
   </body>
