@@ -7,23 +7,77 @@
   </head>
   <body>
     <div class="sidebar">
-      <button class="add">+</button>
-      <button>All</button>
-      <button>Completed</button>
+      <div class="topbtnsdiv">
+        <button class="newtodo">New Task</button>
+        <button class="all filter">All</button>
+        <button class="completed filter">Completed</button>
+        <button class="today filter">Today</button>
+        <button class="upcoming filter">Upcoming</button>
+      </div>
+      <div>
+        <div>Projects</div>
+        <button class="newproject">New Project</button>
+        <div class="projectdiv"></div>
+      </div>
     </div>
-    <div class="main"></div>
-    <dialog class="adddialog" open="">
-      Title: <input type="text" />Description:
-      <textarea name="disc" id="disc"></textarea>
-      Due Date:
-      <input type="date" /> <label for="priority">Priority: </label>
-      <select name="priority" id="priority">
-        <option value="low">Low</option>
-        <option value="medium">Medium</option>
-        <option value="high">High</option>
-      </select>
-      <div><button>Add</button><button>Cancel</button></div>
+    <div class="right">
+      <div class="bar">
+        <div></div>
+        <div class="info"></div>
+        <div>
+          <select class="sort">
+            <option value="newest">Newest</option>
+            <option value="oldest">Oldest</option>
+            <option value="lowToHigh">Priority: low to high</option>
+            <option value="highToLow">Priority: high to low</option>
+          </select>
+        </div>
+      </div>
+      <div class="main">
+        <div>
+          <div><input type="checkbox" /></div>
+          <div>title</div>
+          <div></div>
+          <div>
+            <details>
+              <summary>summar</summary>
+              <p>hello</p>
+            </details>
+          </div>
+          <div>
+            <img src="./icons/edit-02-svgrepo-com.svg" alt="" /><img
+              src="icons/bin-svgrepo-com.svg"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- dialogs -->
+    <dialog class="adddialog">
+      <form>
+        Title: <input type="text" />Description:
+        <textarea name="disc" id="disc"></textarea>
+        Due Date:
+        <input type="date" /> <label for="priority">Priority: </label>
+        <select name="priority" id="priority">
+          <option value="low">Low</option>
+          <option value="medium">Medium</option>
+          <option value="high">High</option>
+        </select>
+        <div><button class="adddd">Add</button><button>Cancel</button></div>
+      </form>
     </dialog>
-    <dialog></dialog>
+    <dialog class="addproject">
+      <form>
+        <input type="text" placeholder="Title" />
+        <div>
+          <button>Confirm</button>
+          <button>Cancel</button>
+        </div>
+      </form>
+    </dialog>
+    <dialog class="edittodo"></dialog>
+    <dialog class="editproject"></dialog>
   </body>
 </html>

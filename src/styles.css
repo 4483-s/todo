@@ -1,7 +1,11 @@
 @import url("./reset.css");
+:root {
+  --light-grey: #eeeeee;
+}
 body {
   display: flex;
 }
+/* sidebar */
 .sidebar {
   background-color: yellow;
   min-height: 100vh;
@@ -9,18 +13,58 @@ body {
   display: flex;
   flex-direction: column;
 }
-
-.add {
-  font-size: 3rem;
-  width: 90%;
-}
-.main {
-  flex: 3;
-  background-color: red;
-  display: flex;
-}
-.adddialog {
+.sidebar > * {
   display: flex;
   flex-direction: column;
-  border: 2px solid green;
+  text-align: center;
+}
+/* right area */
+.right {
+  flex: 3;
+  background-color: olivedrab;
+  display: flex;
+  flex-direction: column;
+}
+.bar {
+  display: flex;
+  background-color: #4c0d48;
+  flex: 1;
+}
+.main {
+  flex: 8;
+}
+.main > * {
+  background-color: white;
+  display: flex;
+  font-size: 2rem;
+}
+.main > * > * {
+  flex: 1;
+}
+.main img {
+  max-width: 20px;
+}
+.main input[type="checkbox"] {
+  background-color: black;
+}
+.bar > * {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.info {
+  flex: 6;
+}
+
+dialog:open {
+  display: flex;
+  flex-direction: column;
+  border: none;
+  border-radius: 10px;
+}
+input[type="text"] {
+  border: none;
+  border-bottom: 1px solid var(--light-grey);
+  outline: none;
 }
