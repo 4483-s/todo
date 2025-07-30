@@ -1,4 +1,4 @@
-function filter(list, projectId = false, status = false, date = false) {
+function filter(list, projectId = null, status = null, date = null) {
   if (projectId) {
     list = list.filter((v) => v.projectId === projectId);
   }
@@ -31,15 +31,16 @@ function filter(list, projectId = false, status = false, date = false) {
   }
   return list;
 }
-function sort(list, prio = false) {
-  switch (prio) {
-    case "lowToHigh":
+function sort(list, option = null) {
+  switch (option) {
+    case "lowtohigh":
       list.sort((a, b) => a.priority - b.priority);
       break;
-    case "highToLow":
+    case "hightolow":
       list.sort((a, b) => b.priority - a.priority);
       break;
-
+    case "oldtonew":
+      break;
     default:
       list.reverse();
   }

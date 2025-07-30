@@ -18,6 +18,12 @@ body {
   flex-direction: column;
   text-align: center;
 }
+.projectdiv > * {
+  display: flex;
+}
+.projectdiv img {
+  width: 1rem;
+}
 /* right area */
 .right {
   flex: 3;
@@ -30,6 +36,7 @@ body {
   background-color: #4c0d48;
   flex: 1;
 }
+/* display section */
 .main {
   flex: 8;
 }
@@ -39,14 +46,15 @@ body {
   font-size: 2rem;
 }
 .main > * > * {
-  flex: 1;
+  flex: 10;
 }
 .main img {
   max-width: 20px;
 }
-.main input[type="checkbox"] {
-  background-color: black;
+.main > div > *:nth-child(-n + 2) {
+  flex: 1;
 }
+/* bar */
 .bar > * {
   flex: 1;
   display: flex;

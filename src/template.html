@@ -7,12 +7,12 @@
   </head>
   <body>
     <div class="sidebar">
+      <button class="newtodo">New Task</button>
       <div class="topbtnsdiv">
-        <button class="newtodo">New Task</button>
-        <button class="all filter">All</button>
-        <button class="completed filter">Completed</button>
-        <button class="today filter">Today</button>
-        <button class="upcoming filter">Upcoming</button>
+        <button class="all">All</button>
+        <button class="completed">Completed</button>
+        <button class="today">Today</button>
+        <button class="upcoming">Upcoming</button>
       </div>
       <div>
         <div>Projects</div>
@@ -34,27 +34,27 @@
         </div>
       </div>
       <div class="main">
-        <div>
-          <div><input type="checkbox" /></div>
-          <div>title</div>
-          <div></div>
-          <div>
-            <details>
-              <summary>summar</summary>
-              <p>hello</p>
-            </details>
-          </div>
-          <div>
-            <img src="./icons/edit-02-svgrepo-com.svg" alt="" /><img
-              src="icons/bin-svgrepo-com.svg"
-              alt=""
-            />
-          </div>
-        </div>
+        <!-- <div> -->
+        <!--   <div><input type="checkbox" /></div> -->
+        <!--   <div>title</div> -->
+        <!--   <div></div> -->
+        <!--   <div> -->
+        <!--     <details> -->
+        <!--       <summary>summar</summary> -->
+        <!--       <p>hello</p> -->
+        <!--     </details> -->
+        <!--   </div> -->
+        <!--   <div> -->
+        <!--     <img src="./icons/edit-02-svgrepo-com.svg" alt="" /><img -->
+        <!--       src="icons/bin-svgrepo-com.svg" -->
+        <!--       alt="" -->
+        <!--     /> -->
+        <!--   </div> -->
+        <!-- </div> -->
       </div>
     </div>
     <!-- dialogs -->
-    <dialog class="adddialog">
+    <dialog class="addtodo">
       <form>
         Title: <input type="text" />Description:
         <textarea name="disc" id="disc"></textarea>
@@ -77,7 +77,11 @@
         </div>
       </form>
     </dialog>
-    <dialog class="edittodo"></dialog>
+    <dialog class="edittodo">
+      <form>
+        <input type="text" />
+      </form>
+    </dialog>
     <dialog class="editproject"></dialog>
   </body>
 </html>
