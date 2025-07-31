@@ -17,41 +17,24 @@
       <div>
         <div>Projects</div>
         <button class="newproject">New Project</button>
-        <div class="projectdiv"></div>
+        <div class="pjctdiv"></div>
       </div>
     </div>
+    <!-- right section -->
     <div class="right">
       <div class="bar">
         <div></div>
         <div class="info"></div>
         <div>
           <select class="sort">
-            <option value="newest">Newest</option>
-            <option value="oldest">Oldest</option>
-            <option value="lowToHigh">Priority: low to high</option>
-            <option value="highToLow">Priority: high to low</option>
+            <option value="newtoold">Newest</option>
+            <option value="oldtonew">Oldest</option>
+            <option value="lowtohigh">Priority: low to high</option>
+            <option value="hightolow">Priority: high to low</option>
           </select>
         </div>
       </div>
-      <div class="main">
-        <!-- <div> -->
-        <!--   <div><input type="checkbox" /></div> -->
-        <!--   <div>title</div> -->
-        <!--   <div></div> -->
-        <!--   <div> -->
-        <!--     <details> -->
-        <!--       <summary>summar</summary> -->
-        <!--       <p>hello</p> -->
-        <!--     </details> -->
-        <!--   </div> -->
-        <!--   <div> -->
-        <!--     <img src="./icons/edit-02-svgrepo-com.svg" alt="" /><img -->
-        <!--       src="icons/bin-svgrepo-com.svg" -->
-        <!--       alt="" -->
-        <!--     /> -->
-        <!--   </div> -->
-        <!-- </div> -->
-      </div>
+      <div class="main"></div>
     </div>
     <!-- dialogs -->
     <dialog class="addtodo">
@@ -65,7 +48,10 @@
           <option value="medium">Medium</option>
           <option value="high">High</option>
         </select>
-        <div><button class="adddd">Add</button><button>Cancel</button></div>
+        <select class="select-project"></select>
+        <div>
+          <button class="add">Add</button><button class="cancel">Cancel</button>
+        </div>
       </form>
     </dialog>
     <dialog class="addproject">

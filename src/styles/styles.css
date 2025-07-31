@@ -65,14 +65,24 @@ body {
   flex: 6;
 }
 
-dialog:open {
-  display: flex;
-  flex-direction: column;
+dialog[open] {
   border: none;
   border-radius: 10px;
+  font-size: 2rem;
 }
-input[type="text"] {
+dialog[open] > form {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+input[type="text"],
+textarea {
   border: none;
   border-bottom: 1px solid var(--light-grey);
   outline: none;
+}
+textarea {
+  border: 1px solid var(--light-grey);
+  outline: none;
+  border-radius: 13px;
 }

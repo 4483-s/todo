@@ -6,7 +6,7 @@ const sideBarDiv = document.querySelector(".sidebar");
 const topBtnsDiv = document.querySelectorAll(".topbtnsdiv");
 const sortSelect = document.querySelector(".sort");
 const main = document.querySelector(".main");
-const projectDiv = document.querySelector(".projectdiv");
+const pjctDiv = document.querySelector(".pjctdiv");
 const newProjectBtn = document.querySelector(".newproject");
 const newTodoBtn = document.querySelector(".newtodo");
 const infoDiv = document.querySelector(".indo");
@@ -14,7 +14,7 @@ const addTodoDia = document.querySelector(".addtodo");
 const addProjectDia = document.querySelector(".addproject");
 const editTodoDia = document.querySelector(".edittodo");
 const editProjectDia = document.querySelector(".editproject");
-
+const projectSelect = document.querySelector(".select-project");
 const binImg = () => {
   const img = document.createElement("img");
   img.src = binSrc;
@@ -28,10 +28,8 @@ const editImg = () => {
 
 const mkTodoDiv = (todoObj, projectArr) => {
   function findProjectTitle(projectId, arr) {
-    console.log(arr);
     const index = arr.findIndex((v) => v.id === projectId);
     if (index >= 0) {
-      console.log(index);
       return arr[index].title;
     } else return "";
   }
@@ -88,13 +86,28 @@ const mkProjectDiv = (projectObj) => {
   container.append(titleDiv, editBtnDiv, deleteBtnDiv);
   return container;
 };
+function mkProjectSelectOpt(projectArr) {
+  const emptyOpt = document.createElement("option");
+  emptyOpt.value = "";
+  emptyOpt.textContent = "Non";
+  div.appendChild(emptyOpt);
+  projectSelect.appendChild(emptyOpt);
+  for (const obj of projectArr) {
+    const opt = document.createElement("option");
+    opt.textContent = obj.title;
+    // opt.setAttribute("value", obj.id);
+    opt.value = obj.id;
+    div.appendChild(opt);
+  }
+  return div;
+}
 export default {
   allBtn,
   sideBarDiv,
   topBtnsDiv,
   sortSelect,
   main,
-  projectDiv,
+  pjctDiv,
   newProjectBtn,
   newTodoBtn,
   infoDiv,
@@ -102,6 +115,8 @@ export default {
   addProjectDia,
   editTodoDia,
   editProjectDia,
+  projectSelect,
   mkTodoDiv,
   mkProjectDiv,
+  mkProjectSelectOpt,
 };
