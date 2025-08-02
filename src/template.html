@@ -9,6 +9,8 @@
     <div class="sidebar">
       <button class="newtodo">New Task</button>
       <div class="topbtnsdiv">
+        <button class="allpending">All Pending</button>
+
         <button class="all">All</button>
         <button class="completed">Completed</button>
         <button class="today">Today</button>
@@ -16,7 +18,7 @@
       </div>
       <div>
         <div>Projects</div>
-        <button class="newproject">New Project</button>
+        <button class="newpjct">New Project</button>
         <div class="pjctdiv"></div>
       </div>
     </div>
@@ -39,22 +41,42 @@
     <!-- dialogs -->
     <dialog class="addtodo">
       <form>
-        Title: <input type="text" />Description:
-        <textarea name="disc" id="disc"></textarea>
+        <input type="text" placeholder="Title" />
+        <textarea placeholder="Description"></textarea>
         Due Date:
         <input type="date" /> <label for="priority">Priority: </label>
-        <select name="priority" id="priority">
+        <select class="priority">
           <option value="low">Low</option>
           <option value="medium">Medium</option>
           <option value="high">High</option>
         </select>
+
         <select class="select-project"></select>
         <div>
-          <button class="add">Add</button><button class="cancel">Cancel</button>
+          <button class="confirm">Add</button
+          ><button class="cancel">Cancel</button>
         </div>
       </form>
     </dialog>
-    <dialog class="addproject">
+    <dialog class="addpjct">
+      <form>
+        <input type="text" placeholder="Title" />
+        <div>
+          <button class="confirm">Add</button
+          ><button class="cancel">Cancel</button>
+        </div>
+      </form>
+    </dialog>
+    <dialog class="edittodo">
+      <form>
+        <input type="text" />
+        <div>
+          <button class="edittodocmfrm">Add</button
+          ><button class="cancel">Cancel</button>
+        </div>
+      </form>
+    </dialog>
+    <dialog class="editpjctcmfrm">
       <form>
         <input type="text" placeholder="Title" />
         <div>
@@ -63,11 +85,5 @@
         </div>
       </form>
     </dialog>
-    <dialog class="edittodo">
-      <form>
-        <input type="text" />
-      </form>
-    </dialog>
-    <dialog class="editproject"></dialog>
   </body>
 </html>

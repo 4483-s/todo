@@ -40,9 +40,8 @@ function sort(list, option = null) {
       list.sort((a, b) => b.priority - a.priority);
       break;
     case "oldtonew":
-      break;
-    default:
       list.reverse();
+      break;
   }
   return list;
 }

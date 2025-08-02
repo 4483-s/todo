@@ -18,10 +18,10 @@ body {
   flex-direction: column;
   text-align: center;
 }
-.projectdiv > * {
+.pjctdiv > * {
   display: flex;
 }
-.projectdiv img {
+.pjctdiv img {
   width: 1rem;
 }
 /* right area */
@@ -39,20 +39,31 @@ body {
 /* display section */
 .main {
   flex: 8;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4em;
 }
-.main > * {
+.todoItem {
   background-color: white;
   display: flex;
   font-size: 2rem;
 }
-.main > * > * {
+.todoItem > * {
   flex: 10;
 }
 .main img {
   max-width: 20px;
 }
-.main > div > *:nth-child(-n + 2) {
+.todoItem > *:nth-child(-n + 2),
+.todoItem > div:has(img) {
   flex: 1;
+}
+.hidden {
+  display: none;
+}
+
+input[type="checkbox"] {
+  accent-color: green;
 }
 /* bar */
 .bar > * {

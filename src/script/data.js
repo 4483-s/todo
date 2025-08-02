@@ -35,11 +35,13 @@ function makeProject(title) {
 }
 //
 const addTodo = (title, description, due, priority, completed, projectId) => {
-  todo.push(makeTodo(title, description, due, priority, completed, projectId));
+  todo.unshift(
+    makeTodo(title, description, due, priority, completed, projectId),
+  );
   todoToLocal();
 };
 const addProject = (title) => {
-  project.push(makeProject(title));
+  project.unshift(makeProject(title));
   projectToLocal();
 };
 const editTodo = (id, title, description, due, priority, completed) => {
