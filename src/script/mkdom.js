@@ -59,7 +59,6 @@ const mkTodoDiv = (todoObj, pjctArr) => {
   titleDiv.textContent = todoObj.title;
   projectDiv.textContent = findPjctTitle(todoObj.projectId, pjctArr);
   todoObj.completed ? (checkbox.checked = true) : (checkbox.checked = false);
-  container.setAttribute("data-todo-id", todoObj.id);
   dateDiv.textContent = format(todoObj.dueDate, "dd/MM/yyyy");
   editBtn.classList.add("edit");
   deleteBtn.classList.add("delete");
@@ -68,6 +67,21 @@ const mkTodoDiv = (todoObj, pjctArr) => {
   editBtn.classList.add("hidden");
   deleteBtn.classList.add("hidden");
   container.classList.add("todoItem");
+  addIdLoop(
+    todoObj.id,
+    "data-todo-id",
+    container,
+    priorityDiv,
+    checkDiv,
+    titleDiv,
+    dateDiv,
+    priorityDiv,
+    editBtn,
+    deleteBtn,
+    editBtnDiv,
+    deleteBtnDiv,
+    descDiv,
+  );
   //
   priorityDiv.appendChild(
     todoObj.priority === 2
@@ -106,6 +120,8 @@ const mkPjctDiv = (pjctObj) => {
   const deleteBtnDiv = document.createElement("div");
   const editBtn = editImg();
   const deleteBtn = binImg();
+  deleteBtn.classList.add("hidden");
+  editBtn.classList.add("hidden");
   editBtn.classList.add("edit");
   deleteBtn.classList.add("delete");
   titleDiv.textContent = pjctObj.title;
@@ -118,7 +134,17 @@ const mkPjctDiv = (pjctObj) => {
     titleDiv,
     editBtnDiv,
     deleteBtnDiv,
+    deleteBtn,
+    editBtn,
   );
+  container.addEventListener("mouseenter", () => {
+    editBtn.classList.remove("hidden");
+    deleteBtn.classList.remove("hidden");
+  });
+  container.addEventListener("mouseleave", () => {
+    editBtn.classList.add("hidden");
+    deleteBtn.classList.add("hidden");
+  });
   container.append(titleDiv, editBtnDiv, deleteBtnDiv);
   container.classList.add("pjctItem");
   return container;

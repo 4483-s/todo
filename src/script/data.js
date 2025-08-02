@@ -64,7 +64,12 @@ const editProject = (id, title) => {
 const delelteItem = (type, id) => {
   //if type is true, delete a todo, otherwise a project
   const arr = type ? todo : project;
-  // const index = arr.findIndex((v) => v.id === id);
+  //if a project is deleted, all the todo of this project will be deleted
+  if (!type) {
+    const filtered = todo.filter((v) => !v.projectId === id);
+    todo.splice(0);
+    todo.push(...filtered);
+  }
   const index = findIdMatch(arr, id);
   arr.splice(index, 1);
   todoToLocal();
