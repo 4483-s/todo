@@ -1,13 +1,13 @@
 function filter(list, projectId = null, status = null, date = null) {
   if (projectId) {
-    list = list.filter((v) => v.projectId === projectId);
+    list = list.filter(v => v.projectId === projectId);
   }
   switch (status) {
-    case "done":
-      list = list.filter((v) => v.completed);
+    case 'done':
+      list = list.filter(v => v.completed);
       break;
-    case "ndone":
-      list = list.filter((v) => !v.completed);
+    case 'ndone':
+      list = list.filter(v => !v.completed);
   }
 
   if (date) {
@@ -18,14 +18,20 @@ function filter(list, projectId = null, status = null, date = null) {
       timeNow.getDate(),
     );
     switch (date) {
-      case "past":
-        list = list.filter((v) => v.dueDate.getTime() < dateNow.getTime());
+      case 'past':
+        list = list.filter(v => {
+          console.log(v.dueDate);
+          return v.dueDate.getTime() < dateNow.getTime();
+        });
         break;
-      case "today":
-        list = list.filter((v) => v.dueDate.getTime() === dateNow.getTime());
+      case 'today':
+        list = list.filter(v => {
+          console.log(v.dueDate);
+          v.dueDate.getTime() === dateNow.getTime();
+        });
         break;
-      case "future":
-        list = list.filter((v) => v.dueDate.getTime() >= dateNow.getTime());
+      case 'future':
+        list = list.filter(v => v.dueDate.getTime() >= dateNow.getTime());
         break;
     }
   }
@@ -33,13 +39,13 @@ function filter(list, projectId = null, status = null, date = null) {
 }
 function sort(list, option = null) {
   switch (option) {
-    case "lowtohigh":
+    case 'lowtohigh':
       list.sort((a, b) => a.priority - b.priority);
       break;
-    case "hightolow":
+    case 'hightolow':
       list.sort((a, b) => b.priority - a.priority);
       break;
-    case "oldtonew":
+    case 'oldtonew':
       list.reverse();
       break;
   }

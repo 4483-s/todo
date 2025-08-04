@@ -1,4 +1,4 @@
-@import url("./reset.css");
+@import url('./reset.css');
 :root {
   --light-grey: #eeeeee;
 }
@@ -67,7 +67,7 @@ body {
   display: none;
 }
 
-input[type="checkbox"] {
+input[type='checkbox'] {
   accent-color: green;
 }
 
@@ -92,7 +92,7 @@ dialog[open] > form {
   flex-direction: column;
   gap: 1em;
 }
-input[type="text"],
+input[type='text'],
 textarea {
   border: none;
   border-bottom: 1px solid var(--light-grey);
